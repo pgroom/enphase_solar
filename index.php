@@ -1,5 +1,6 @@
 <?php
 
+
 $url="http://10.0.0.158/production.json";
 
 $page = $_SERVER['PHP_SELF'];
@@ -18,16 +19,17 @@ $production=abs(round(substr($data_arr[9], strpos($data_arr[9], ":") +1)));
 $consumption=abs(round(substr($data_arr[28], strpos($data_arr[28], ":") +1)));
 $net=round(substr($data_arr[47], strpos($data_arr[47], ":") +1));
 
-echo "Production:      " . $production . "<br>";
-echo "Consumption:     " . $consumption . "<br>";
+echo '<span style="font-size: 40px;"> ' . "Production: " . $production . '</span> <br>';
+echo '<span style="font-size: 40px;"> ' . "Consumption: " . $consumption . '</span> <br>';
 
 if ($net<=0)
 {
-echo "Feeding to grid: " . abs($net) . "<br>";
+echo '<span style="font-size: 40px;"> ' . "Feeding to grid: " . abs($net) . '</span> <br>';
 }
 else
 {
-echo "Drawing from grid: " . $net . "<br>";
+echo '<span style="font-size: 40px;"> ' . "Drawing from grid: " . $net . '</span> <br>';
 }
 
  ?>
+
