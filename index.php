@@ -1,11 +1,13 @@
 <?php
 
+$url="http://10.0.0.158/production.json";
+
 $page = $_SERVER['PHP_SELF'];
 $sec = "15";
 header("Refresh: $sec; url=$page");
 
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, 'http://10.0.0.158/production.json');
+curl_setopt($ch, CURLOPT_URL, $url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $data = curl_exec($ch);
 curl_close($ch);
